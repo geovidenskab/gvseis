@@ -1,4 +1,4 @@
-# GV_seis.py v. 6.2 - FIXED VERSION WITH TIMING AND STATION CORRECTIONS
+# GVseis3.py v. 3.1 
 """
 Streamlined Professional Seismic Analysis Platform - FIXED TIMING & STATION MATCHING
 ====================================================================================
