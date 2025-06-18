@@ -10,9 +10,9 @@ En avanceret seismologisk analyseplatform til realtids jordskælvsanalyse med:
 - Interaktive kort og visualiseringer
 - Excel eksport til videre analyse
 
-Udviklet af: [Udvikler]
-Version: 6.2
-Dato: December 2024
+Udviklet af: Philip Kruse Jakobsen, Silkeborg Gymnasium
+Version: 3.1
+Dato: Juni 2025
 
 Hovedklasser:
 - EnhancedSeismicProcessor: Avanceret signalprocessering og magnitude beregning
@@ -31,10 +31,10 @@ import streamlit as st
 
 # Konfiguration af Streamlit applikation - skal være første Streamlit kommando
 st.set_page_config(
-    page_title="GV Seismisk Analyse",
+    page_title="GV Seismisk Analyse med Excel-export",
     page_icon="🌍",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
 # Standard Python biblioteker
@@ -2254,6 +2254,32 @@ class StreamlinedSeismicApp:
         self.setup_session_state()
         self.data_manager = StreamlinedDataManager()
         self.initialize_app()
+        # Velkomstbesked og info sidebar
+        with st.sidebar:
+            st.markdown("### 🌍 Velkommen!")
+            st.markdown("""
+            Her har du let adgang til:
+        
+            🔸 Real-time jordskælv data fra IRIS  
+            🔸 Professionel signal processering  
+            🔸 Ms magnitude beregning  
+            🔸 Interaktive visualiseringer  
+            🔸 Excel eksport til brug i undervisningen
+            """)
+            st.markdown("---")
+            st.markdown("### Sådan bruger du platformen:")
+            st.markdown("""
+            1. Klik på et jordskælv på kortet
+            2. Vælg en analyse-klar station i menu til højre
+            3. Rul ned og se analysen under kortet
+            4. Juster filter indstillinger
+            5. Eksporter resultater til Excel
+            """)
+            st.markdown("---")
+            st.caption("🌍 Udviklet af Philip Kruse Jakobsen") 
+            st.caption("Kontakt: pj@sg.dk")
+            
+            
     
     def setup_session_state(self):
         """
